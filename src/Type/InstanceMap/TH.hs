@@ -124,10 +124,10 @@ mkMapWithOpts opts className inType outWrap fExp = do
 
   a <- newName "a"
   let dataInstD = DataInstD []
-                            ''Some
-                            [ConT className]
                             Nothing
-                            [ForallC [PlainTV a] 
+                            (AppT (ConT ''Some) (ConT className))
+                            Nothing
+                            [ForallC [PlainTV a InferredSpec] 
                                      [AppT (ConT ''Typeable) (VarT a),AppT (ConT className) (VarT a)]
                                      (NormalC someName [(Bang NoSourceUnpackedness NoSourceStrictness,
                                                         (VarT a))])]

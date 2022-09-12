@@ -1,7 +1,8 @@
 name:                instance-map
 version:             0.1.0.0
--- synopsis:
--- description:
+synopsis:            Template haskell utilities for helping with deserialization etc. of existential types
+description:         instance-map provides Template Haskell functions that help go from serialized values with value-level type witnesses (i.e. TypeRep values) to existential types containing type-level evidence of membership in a type class. It is useful for dealing with serialized values when only membership in a certain class (and not the monomorphic type) is known at the site of deserialization.
+
 homepage:            https://github.com/RichardWarfield/instance-map#readme
 license:             BSD3
 license-file:        LICENSE
@@ -40,5 +41,5 @@ test-suite instance-map-test
                      , hspec
                      , binary
                      , aeson
-  ghc-options:         -j3 -rtsopts -O0  -dynamic
+  ghc-options:         -j3 -rtsopts  -dynamic
   default-language:    Haskell2010
